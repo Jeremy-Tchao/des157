@@ -45,14 +45,17 @@ table {
 {
   width: 1020px;
   position: relative;
-  height: 600px;
+  
   margin: auto;
 
 
 }
 
-
-
+.articles
+{
+  border: 2px solid white;
+  padding: 20px;
+}
 
 body {
   color: white;
@@ -62,7 +65,7 @@ body {
   background: linear-gradient(135deg, rgba(21,36,62,1) 0%, rgba(55,74,107,1) 100%);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 1080px;
+  
 
 }
 
@@ -73,7 +76,7 @@ header
   text-align: center;
   margin:auto;
   margin-top: 100px;
-  margin-bottom: 1px;
+  
   background-image: url(background.jpg);
   background-size: cover;
   height: 100px;
@@ -89,11 +92,36 @@ header
 
 h1
 {
-  
   font-weight: 100;
   font-size: 100px;
-  
-  vertical-align: middle;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: 100;
+}
+
+.articleh1
+{
+  font-size: 60px;
+  font-weight: 300;
+}
+
+p
+{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+img 
+{
+  width: 100%;
+}
+
+#headerl
+{
+  text-decoration: none;
 }
 
 a {
@@ -117,6 +145,7 @@ footer
   bottom: -100px;
   padding: 5px;
   background-color: rgba(0,0,0,0.4);
+  margin-bottom: 70px;
 }
 
 footer p {
@@ -188,9 +217,5 @@ li {
   margin-left: 20px;
 }
 
-h2 {
-  font-size: 30px;
-  margin-bottom: 10px;
-  font-weight: 100;
-}
+
 
