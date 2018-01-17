@@ -73,25 +73,27 @@ header
   text-align: center;
   margin:auto;
   margin-top: 100px;
-  margin-bottom: 70px;
+  margin-bottom: 1px;
   background-image: url(background.jpg);
   background-size: cover;
-  height: 200px;
+  height: 100px;
 }
 
 #mySketch
 {
   display: block;
-  z-index: 5;
-  position: absolute;
-  top: 1px;
+  height: 400px;
+  margin-bottom: 15px;
 }
 
 
 h1
 {
+  
   font-weight: 100;
   font-size: 100px;
+  
+  vertical-align: middle;
 }
 
 a {
@@ -111,7 +113,7 @@ footer
   margin-top: 10px;
   clear: both;
   font-size: 12px;
-  
+  width: 170px;
   bottom: -100px;
   padding: 5px;
   background-color: rgba(0,0,0,0.4);
@@ -137,35 +139,39 @@ footer a {
   
 }
 
-#studios {
+#studios, #blog, #projects 
+{
 
   width: 25%;
   height: 300px;
   padding: 5px;
   box-sizing: border-box;
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
   border: 2px solid white;
   background-color: rgba(0,0,0,0.2);
-  float: left;
+  position: relative;
+  
+  
 
 }
 
-#projects
- {
-
-  width: 25%;
-  box-sizing: border-box;
-  padding: 5px;
-  display: inline-block;
-  vertical-align: top;
-  height: 300px;
+#studios
+{
+  float: left;
   
-  border: 2px solid white;
-  background-color: rgba(0,0,0,0.2);
-  float: right;
+}
 
+#blog
+{
+
+  
+  margin: auto;
+  
+}
+
+#projects
+{ 
+  
+  float: right;
 }
 
 
