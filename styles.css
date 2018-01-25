@@ -117,8 +117,20 @@ p
 img 
 {
   width: 100%;
+  
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
+.aimg
+{
+  width: 75%;
+}
+
+.pimg
+{
+  width: 75%;
+}
 video
 {
   width: 75%;
