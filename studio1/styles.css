@@ -65,7 +65,7 @@ h1
 #lefttext, #righttext
 {
   position: absolute;
-  top: 1200px;
+  top: 1300px;
   
 }
 
@@ -92,6 +92,12 @@ section
   padding-bottom: 50px;
   border: 2px solid;
   
+}
+
+#outputsec
+{
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 p
