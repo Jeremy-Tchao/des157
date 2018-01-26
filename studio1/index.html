@@ -13,30 +13,51 @@
 <body>
   
 <header>
+    <h1>DEPATURE FROM SFO</h1>
     <img src="sfoMap.jpg" alt="SFO Map">
 </header>
 
 
 <div id="lefttext">
-        SW-2, 08 DtEC 2016 to 05 JAN 2017
+        SW-2, 08 DEC 2016 to 05 JAN 2017
  </div>
 
  <div id="righttext">
-        SW-2, 08 DtEC 2016 to 05 JAN 2017
+        SW-2, 08 DEC 2016 to 05 JAN 2017
  </div>
 
 <section id="inputsec">
     <form name="communications">
         <table>
+            
+                <tr>
+                        <td class="left">
+                            <label for="aircraft">AIRCRAFT TYPE: </label>
+                        </td>
+                        <td>
+                            <input type="text" name="aircraft" value="Ex. Boeing 777, Airbus 330">
+                        </td>
+                    </tr>
+            
             <tr>
                 <td class="left">
                     <label for="callsign">YOUR CALLSIGN: </label>
                 </td>
                 <td>
-                    <input type="text" name="callsign" value="Ex. Cathay 251">
+                    <input type="text" name="callsign" value="Ex. Cathay 873, United 869">
                 </td>
             </tr>
-            
+           
+            <tr>
+                <td class="left">
+                    <label for="gate">YOUR GATE NUMBER: </label>
+                </td>
+                <td>
+                    <input type="text" name="gate" value="01-99">
+                </td>
+            </tr>
+
+                
             <tr>
                 <td class="left">
                     <label for="des">YOUR DESTINATION: </label>
@@ -59,36 +80,47 @@
                     </select>
                 </td>
             </tr>
+            
+            <tr>
+                <td class="left">
+                    <label for="tail">YOUR TAIL DIRECTION: </label>
+                </td>
+                <td>
+                    <select name="tail">
+                        <option value="North">North</option>
+                        <option value="East">East</option>
+                        <option value="South">South</option>
+                        <option value="West">West</option>
+                    </select>
+                </td>
+            </tr>
+
 
             <tr>
                 <td class="left">
-                    <label for="taxi">TAXI TO RUNWAY VIA WHAT TAXIWAY: </label>
+                    <label for="taxi">TAXIWAYS TO RUNWAY: </label>
                 </td>
                 <td>
-                    <input type="text" name="taxi" value="A-Z, seperated by comma">
+                    <input type="text" name="taxi" value="A-Z, seperated by comma, Ex. B,M">
                 </td>
             </tr>
-            
-            <tr>
-                    <td class="left">
-                        <label for="tail">YOUR TAKEOFF RUNWAY: </label>
-                    </td>
-                    <td>
-                        <select name="tail">
-                            <option value="N">North</option>
-                            <option value="E">East</option>
-                            <option value="S">South</option>
-                            <option value="W">West</option>
-                        </select>
-                    </td>
-                </tr>
 
 
         </table>
+
+        <div id="buttons">
+                <input type="submit" name="submit" value="Submit">
+                <input type="reset" name="reset" value="Reset">
+        </div>
     </form>
 
 </section>
 
+<section id="outputsec" class="hide">
+    <p id="myMsg"></p>
+</section>
+
+<script src="script.js"></script>
   
 </body>
 </html>
