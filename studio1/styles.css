@@ -168,3 +168,14 @@ input[type="reset"]
 {
   display: none;
 }
+
+footer
+{
+  margin-left: 74px;
+  
+}
+
+footer p
+{
+  font-size: 20px;
+}
