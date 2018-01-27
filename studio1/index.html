@@ -35,7 +35,7 @@
                             <label for="aircraft">AIRCRAFT TYPE: </label>
                         </td>
                         <td>
-                            <input type="text" name="aircraft" placeholder="Ex. Boeing 777" required>
+                            <input type="text" id="aircraft" placeholder="Ex. Boeing 777" required>
                         </td>
                     </tr>
             
@@ -44,7 +44,7 @@
                     <label for="callsign">YOUR CALLSIGN: </label>
                 </td>
                 <td>
-                    <input type="text" name="callsign" placeholder="Ex. Cathay 873" required>
+                    <input type="text" id="callsign" placeholder="Ex. Cathay 873" required>
                 </td>
             </tr>
            
@@ -53,7 +53,7 @@
                     <label for="gate">YOUR GATE NUMBER: </label>
                 </td>
                 <td>
-                    <input type="text" name="gate" placeholder="01-99" required>
+                    <input type="text" id="gate" placeholder="01-99" required>
                 </td>
             </tr>
 
@@ -63,7 +63,7 @@
                     <label for="des">YOUR DESTINATION: </label>
                 </td>
                 <td>
-                    <input type="text" name="des" placeholder="Ex. Hong Kong" required>
+                    <input type="text" id="des" placeholder="Ex. Hong Kong" required>
                 </td>
             </tr>
 
@@ -72,7 +72,7 @@
                     <label for="rwy">YOUR TAKEOFF RUNWAY: </label>
                 </td>
                 <td>
-                    <select name="rwy" required>
+                    <select id="rwy">
                         <option value="1L">1L</option>
                         <option value="1R">1R</option>
                         <option value="10L">10L</option>
@@ -86,7 +86,7 @@
                     <label for="tail">YOUR TAIL DIRECTION: </label>
                 </td>
                 <td>
-                    <select name="tail" required>
+                    <select id="tail">
                         <option value="North">North</option>
                         <option value="East">East</option>
                         <option value="South">South</option>
@@ -98,7 +98,7 @@
 
             <tr>
                 <td class="left">
-                    <label for="taxi">TAXIWAYS TO RUNWAY: </label>
+                    <label id="taxi">TAXIWAYS TO RUNWAY: </label>
                 </td>
                 <td>
                     <input type="text" name="taxi" placeholder="A-Z, Ex, B,M " required>
