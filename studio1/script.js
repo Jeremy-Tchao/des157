@@ -320,7 +320,7 @@ var taxiraw = document.communications.taxi.value.split(/,*/);
     "<em>118.2 MHz San Francisco Clearance Delivery (CLNC DEL)</em> <br> <em>" 
     
     + 
-    callsign + "</em>: Clearance, <em>" + callsign + "</em>'s airways to <em>" + des + "</em>, type is <em>" + aircraft + "</em><br> CLNC DEL: <em>" + callsign + "</em> cleared to <em>" + des + "</em> via the San Francisco Four departure, flight plan route depart runway <em>" + rwy + "</em>, squawk " +  squawk + "<br> <em>" + callsign + "</em>: <em>" + callsign + "</em> cleared to <em>" + des + "</em>, San Francisco Four, flight plan route, <em>" + rwy + "</em>, " + squawk + "<br> CLNC DEL: <em>" + callsign + "</em> readback correct, contact apron 124.25 for pushback" + "<br> <em>"  + callsign + "</em>: 124.25 for pushback, <em>" + callsign +"</em>."
+    callsign + "</em>: Clearance, <em>" + callsign + "</em>'s airways to <em>" + des + "</em>, type is <em>" + aircraft + "</em><br> CLNC DEL: <em>" + callsign + "</em> cleared to <em>" + des + "</em> via the San Francisco Four departure, flight plan route, depart runway <em>" + rwy + "</em>, squawk " +  squawk + "<br> <em>" + callsign + "</em>: <em>" + callsign + "</em> cleared to <em>" + des + "</em>, San Francisco Four, flight plan route, <em>" + rwy + "</em>, " + squawk + "<br> CLNC DEL: <em>" + callsign + "</em> readback correct, contact apron 124.25 for pushback" + "<br> <em>"  + callsign + "</em>: 124.25 for pushback, <em>" + callsign +"</em>."
     +
 
     "<br><br><em>124.25 MHz Apron Control</em> <br> <em>" 
