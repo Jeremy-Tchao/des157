@@ -48,6 +48,7 @@ table {
 } */
 
 
+
 body
 { 
   margin: auto;
@@ -66,9 +67,77 @@ header
   margin-bottom: 50px;
 }
 
+
+@media only screen and (min-width: 768px) 
+{
+
+  #bpk, #items
+  {
+    width: 60%;
+  }
+
+  #bpk img
+  {
+    width: 384px;
+    margin-left: 7%;
+  }
+
+  #fourseven
+  {
+    left: 98%;
+  }
+
+    @keyframes keychainmove
+  {
+    from 
+    {
+      left: 50%
+    }
+    
+    to 
+    {
+      left: 98%
+    }
+  }
+
+}
+
+@media only screen and (max-width: 768px) 
+{
+
+  #bpk, #items
+  {
+    width: 40%;
+  }
+
+  #bpk img
+  {
+    width: 294px;
+    margin: auto;
+  }
+
+  #fourseven
+  {
+    left: 110%;
+  }
+  @keyframes keychainmove
+  {
+    from 
+    {
+      left: 50%
+    }
+    
+    to 
+    {
+      left: 110%
+    }
+  }
+
+}
+
+
 #bpk, #items
 {
-  width: 60%;
   margin: auto;
   clear: both;
   position: relative;
@@ -78,9 +147,9 @@ header
 #bpk img
 {
 
-  width: 384px;
+  
   display: block;
-  margin: auto;
+  
   
 }
 
@@ -183,7 +252,7 @@ header
 
 #fourseven
 {
-  left: 98%;
+  
   margin-top: 308px;
   animation-name: keychainmove;
   animation-duration: 3s;
@@ -299,18 +368,7 @@ header
 }
 
 
-@keyframes keychainmove
-{
-  from 
-  {
-    left: 50%
-  }
-  
-  to 
-  {
-    left: 98%
-  }
-}
+
 
 h1
 {
@@ -367,7 +425,7 @@ footer
   left: 30%;
   top: 800px;
   position: absolute;
-  margin-bottom: 30px;
+  padding-bottom: 50px;
   color: white;
   text-align: center;
   font-size: 20px;
