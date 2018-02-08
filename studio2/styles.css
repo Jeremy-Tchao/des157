@@ -167,15 +167,15 @@ header
     z-index: 0;
     display: block;
     
-    -webkit-transform: perspective(1px);
+    
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px transparent;
     
     position: absolute;
 
-    -webkit-transition-duration: 0.3s;
+    
     transition-duration: 0.3s;
-    -webkit-transition-property: transform;
+    
     transition-property: transform;
     
     
@@ -185,17 +185,17 @@ header
     
 
     
-    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.8) 0%, transparent 80%);
+    
     background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, transparent 80%);
     /* W3C */
-    -webkit-transition-duration: 0.3s;
+    
     transition-duration: 0.3s;
-    -webkit-transition-property: transform, opacity;
+    
     transition-property: transform, opacity;
   }
 #bpk a:hover
 {
-    -webkit-transform: translateY(-20px);
+    
     transform: translateY(-20px);
 }
 
@@ -271,13 +271,13 @@ header
     text-decoration: none;
     color: white;
     display: block;
-    -webkit-transform: perspective(1px);
+   
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px transparent;
     position: absolute;
-    -webkit-transition-duration: 0.3s;
+   
     transition-duration: 0.3s;
-    -webkit-transition-property: transform;
+   
     transition-property: transform;
 
 }
@@ -285,7 +285,7 @@ header
 #items a:hover
 {   
     
-    -webkit-transform: translateY(-30px);
+    
     transform: translateY(-30px);
 }
 
@@ -401,20 +401,12 @@ h1
 .firstColor{
   color: white;
   background-color: #000000;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
   transition: all 1s ease;
   }
   
   .secondColor{
     color: black;
   background-color: #FFFFFF;
-  -webkit-transition: all 2s ease;
-  -moz-transition: all 2s ease;
-  -o-transition: all 2s ease;
-  -ms-transition: all 2s ease;
   transition: all 2s ease;
   }
   
