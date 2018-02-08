@@ -87,17 +87,11 @@ header
     left: 98%;
   }
 
-    @keyframes keychainmove
+  @keyframes keychainmove
   {
-    from 
-    {
-      left: 50%
-    }
+    from {left: 50%}
     
-    to 
-    {
-      left: 98%
-    }
+    to {left: 98%}
   }
 
 }
@@ -124,15 +118,9 @@ header
   }
   @keyframes keychainmove
   {
-    from 
-    {
-      left: 50%
-    }
+    from {left: 50%}
     
-    to 
-    {
-      left: 110%
-    }
+    to {left: 110%}
   }
 
 }
