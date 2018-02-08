@@ -356,15 +356,9 @@ header
 
 @keyframes ippmove
 {
-  from 
-  {
-    left: 50%
-  }
+  from {left: 50%}
   
-  to 
-  {
-    left: 70%
-  }
+  to {left: 70%}
 }
 
 
