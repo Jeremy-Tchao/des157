@@ -10,6 +10,8 @@ var keychaind = document.getElementById('foursevend');
 
 document.getElementById("bpk").onclick = enlargeAndNext;
 
+
+//Toggle the overlay for each item
 mbp.addEventListener('click', function(){
     mbpd.className="show";
     document.getElementById("container").className = "firstColor";
@@ -31,6 +33,7 @@ fourseven.addEventListener('click', function(){
     document.querySelector('footer').className = 'hide';
   });
 
+//Close the overlay for each item
 close[0].addEventListener('click', function(){
 mbpd.className="hide";
 document.getElementById("container").className = "secondColor";
@@ -53,6 +56,7 @@ document.getElementById("displayarea").className = "show";
 document.querySelector('footer').className = 'show';
 });
 
+//Transition from start page to main page
 function enlargeAndNext()
 {   
     
