@@ -16,6 +16,8 @@ flex-direction: row;
 flex-wrap: wrap;
 align-items: center;
 margin: 0;
+font-family: sans-serif;
+
 }
 .title{
 font-family: "Robo Slab", helvetica;
@@ -134,14 +136,14 @@ a{
 margin-right: 10px;
 margin-top: 20px;
 }
-a:link {
+/* a:link {
 color: white;
 text-decoration: none;
 }
 a:visited {
 text-decoration: none;
 color: white;
-}
+} */
 
 .buttons-links{
 margin-right: 20px;
@@ -156,3 +158,13 @@ justify-content: space-between;
     margin: auto;
 }
 
+footer
+{
+    margin-left: 20px;
+    color: black;
+}
+
+footer a 
+{
+    color: #0198D9;
+}
