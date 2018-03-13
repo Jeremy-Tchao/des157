@@ -12,14 +12,43 @@
   </head>
   <body>
 
-    <div id="texts">
-      From Hong Kong to the World
+    <div id="text-buttons">
+      <h1>From Hong Kong to the World</h1>
       <p>
         "When our movement was limited, so were our options": This visulization is a celebration of modern aviation and how that enables people to move around easily in the world, the exchanges and fusions of ideas. 
       </p>
 
+      <div id="addMyStory">
+        Add My Story
+      </div>
+
     </div>
+    
     <div id="map" class="map"></div>
+
+    <div id="inputSec" class="hide">
+
+      <div id="close">&otimes;</div>
+
+      <p id="ttitle">Add Your Story</p>
+
+      <form name="formToAdd" onsubmit="return false">
+        
+        <div id="inputs">
+
+          <label for="name">Your name: </label><br>
+          <input type="text" id="name" required><br><br>
+      
+          <label for="story">Your Story: </label><br>
+          <textarea id="story" required></textarea><br>
+        </div>
+        <div id="buttons">
+                <input type="submit" name="submit" value="Submit">
+                <input type="reset" name="reset" value="Reset">
+        </div>
+
+      </form>
+    </div>
     
     <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
     <script src="https://d3js.org/topojson.v1.min.js" charset="utf-8"></script>

@@ -1,9 +1,22 @@
 
 
-(function(){
+
+
+document.formToAdd.onsubmit = processForm;
+
+
+
+
 
   /******************************Global Variables **********************************/
-  let header = document.getElementById("map")
+  let header = document.getElementById("map");
+  var inputsec = document.getElementById("inputSec");
+  var close = document.getElementById("close");
+  var addstory = document.getElementById("addMyStory");
+  var names = ["Zhaohui Zhao", ["Tony Xue","Steven Zhao"]];
+  var stories = ["Lorem ipsum00",["Lorem ipsum10", "Loreqm Ipsum11"]];
+  console.log(names[1][0]);
+  console.log(stories[1][0]);
 
   let margin = { top: 0, left: 0, right: 0, down: 0},
     height = 690 - margin.top - margin.down,
@@ -18,8 +31,21 @@
   const toDeg = 180 / Math.PI;
 /******************************Global Variables **********************************/
 
+
+
+
+close.addEventListener("click", function(){
+  inputsec.style.display="none";
+  console.log("closed");
+});
+
+addstory.addEventListener("click", function(){
+  inputsec.style.display="block";
+  console.log("opened");
+});
+
 /****************************Math Functions *****************************/
-// Cross product calculates vector perpendicular to 2 given vectors
+// Cross product calculates vector perpendicular to 2 give  n vectors
 function cross(u, v) {
   return [u[1] * v[2] - u[2] * v[1], u[2] * v[0] - u[0] * v[2], u[0] * v[1] - u[1] * v[0]];
 }
@@ -145,6 +171,9 @@ return quat2euler(t);
 }
 /****************************Math Functions *****************************/
 
+
+
+
   let drag = d3.drag()
                 .on("start", dragstart)
                 .on("drag", dragged)
@@ -194,7 +223,7 @@ return quat2euler(t);
 
   let svg = d3.select("#map")
               .append("svg")
-              .attr("height", height + margin.top + margin.down)
+              .attr("height", 768 + margin.top + margin.down)
               .attr("width", width + margin.left + margin.right)
               .call(drag)
               .call(zoom)
@@ -485,4 +514,27 @@ return quat2euler(t);
 
       });
     }
-})();
+
+
+    /***********Forms**************************/
+    
+    
+
+    function processForm()
+    {
+      
+
+      console.log("Ran");
+
+      var name = document.formToAdd.name.value;
+      var story = document.formToAdd.story.value;
+
+      stories.push(story);
+      console.log(stories[2]);
+
+      names.push(name);
+      console.log(names[2]);
+
+      return false;
+    }
+

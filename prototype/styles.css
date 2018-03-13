@@ -19,21 +19,35 @@ margin: 0;
 font-family: sans-serif;
 
 }
-.title{
-font-family: "Robo Slab", helvetica;
-display: flex;
-justify-content: flex-start;
-color: white;
-order: -5;
-width: 200px;
-height: 50px;
+
+#text-buttons
+{
+    width: 90%;
+    margin: auto;
 }
-div{
-/*display: flex;
-align-items: center;
-justify-content: center;*/
+
+#text-buttons h1
+{
+    margin-bottom: -10px;
+    color: #0198D9;
+}
+
+#text-buttons p
+{
+    color: rgb(142, 142, 142);
+}
+
+#addMyStory
+{
+    color: #0198D9;
+    width: 97px;
+    border-radius: 4px;
+    border: #0198D9 2px solid;
+    padding: 4px;
 
 }
+
+
 svg {
 background: transparent;
 /*display: flex;*/
@@ -105,6 +119,7 @@ padding: 4px;
 .map
 {
     width: 100%;
+    height: 768px;
 }
 
 .rect-g-map{
@@ -167,4 +182,107 @@ footer
 footer a 
 {
     color: #0198D9;
+}
+
+
+
+#inputSec
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #0198D9;
+    background: rgba(255, 255, 255, 0.8);
+    
+}
+
+#close 
+{
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    color: #0198D9;
+    font-size: 50px;
+}
+
+#ttitle
+{
+    
+    font-size: 50px;
+    font-weight: 200;
+    width: 340px;
+    margin: auto;
+    margin-top: 15%;
+    margin-bottom: 20px;
+}
+
+#inputs
+{
+    margin: auto;
+    width: 30%;
+
+}
+
+label, input, textarea
+{
+    width: 100%;
+    border: 0px;
+    color: #0198D9;
+}
+
+label
+{
+    font-size: 30px;
+    font-weight: 300;
+}
+
+input, textarea
+{   
+    border-radius: 4px;
+    border: #0198D9 1px solid;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+#story
+{
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+#buttons
+{
+  margin: auto;
+  width: 180px;
+}
+
+
+
+
+input[type="submit"],
+input[type="reset"] 
+{
+
+    color: #0198D9;
+  width: auto;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-right: 2%;
+  padding: 10px;
+
+}
+
+
+.show
+{
+  display: block;
+}
+
+
+.hide
+{
+  display: none;
 }
