@@ -13,10 +13,9 @@ document.formToAdd.onsubmit = processForm;
   var inputsec = document.getElementById("inputSec");
   var close = document.getElementById("close");
   var addstory = document.getElementById("addMyStory");
-  var names = ["Zhaohui Zhao", ["Tony Xue","Steven Zhao"]];
-  var stories = ["Lorem ipsum00",["Lorem ipsum10", "Loreqm Ipsum11"]];
-  console.log(names[1][0]);
-  console.log(stories[1][0]);
+  var names = ["Zhaohui Zhao"];
+  var stories = ["Lorem ipsum dolor sit amet, magna ut. Ut vitae vestibulum varius volutpat, auctor fermentum diam pede tempus ipsum dolor, ut morbi lorem ante. Fusce porta velit, amet imperdiet. Amet nec. Suspendisse illo rhoncus. Faucibus suspendisse quam. Eu diam luctus sem gravida, mauris per in tempor et. Quis l"];
+  var destinations = ["SFO"];
 
   let margin = { top: 0, left: 0, right: 0, down: 0},
     height = 690 - margin.top - margin.down,
@@ -528,12 +527,14 @@ return quat2euler(t);
 
       var name = document.formToAdd.name.value;
       var story = document.formToAdd.story.value;
+      var des = document.formToAdd.des.value;
+
+
 
       stories.push(story);
-      console.log(stories[2]);
 
       names.push(name);
-      console.log(names[2]);
+      
 
       return false;
     }

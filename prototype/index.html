@@ -19,7 +19,7 @@
       </p>
 
       <div id="addMyStory">
-        Add My Story
+        Add Your Story
       </div>
 
     </div>
@@ -36,11 +36,14 @@
         
         <div id="inputs">
 
-          <label for="name">Your name: </label><br>
+          <label for="name">Your Name: </label><br>
           <input type="text" id="name" required><br><br>
+
+          <label for="des">Your Destination: </label><br>
+          <input type="text" id="des" required><br><br>
       
           <label for="story">Your Story: </label><br>
-          <textarea id="story" required></textarea><br>
+          <textarea id="story" maxlength="300" required>Max 300 Character</textarea><br>
         </div>
         <div id="buttons">
                 <input type="submit" name="submit" value="Submit">
