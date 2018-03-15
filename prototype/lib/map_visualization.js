@@ -11,11 +11,15 @@ document.formToAdd.onsubmit = processForm;
   /******************************Global Variables **********************************/
   let header = document.getElementById("map");
   var inputsec = document.getElementById("inputSec");
-  var close = document.getElementById("close");
+  var inputsec1 = document.getElementById("inputSec1");
+  var close = document.getElementsByClassName("close");
   var addstory = document.getElementById("addMyStory");
-  var names = ["Zhaohui Zhao"];
-  var stories = ["Lorem ipsum dolor sit amet, magna ut. Ut vitae vestibulum varius volutpat, auctor fermentum diam pede tempus ipsum dolor, ut morbi lorem ante. Fusce porta velit, amet imperdiet. Amet nec. Suspendisse illo rhoncus. Faucibus suspendisse quam. Eu diam luctus sem gravida, mauris per in tempor et. Quis l"];
-  var destinations = ["SFO"];
+  var storylist = document.getElementsByClassName("stories");
+  var storydisplay = document.getElementById("displaySec");
+  
+  var names = ["Zhaohui Zhao", "Tony Xue"];
+  var stories = ["Lorem ipsum dolor sit amet, magna ut. Ut vitae vestibulum varius volutpat, auctor fermentum diam pede tempus ipsum dolor, ut morbi lorem ante. Fusce porta velit, amet imperdiet. Amet nec. Suspendisse illo rhoncus. Faucibus suspendisse quam. Eu diam luctus sem gravida, mauris per in tempor et. Quis l","Lorem ipsum dolor sit amet, magna ut. Ut vitae vestibulum varius volutpat, auctor fermentum diam pede tempus ipsum dolor, ut morbi lorem ante. Fusce porta velit, amet imperdiet. Amet nec. Suspendisse illo rhoncus. Faucibus suspendisse quam. Eu diam luctus sem gravida, mauris per in tempor et. Quis l"];
+  var destinations = ["SFO", "SMF"];
 
   let margin = { top: 0, left: 0, right: 0, down: 0},
     height = 690 - margin.top - margin.down,
@@ -33,7 +37,7 @@ document.formToAdd.onsubmit = processForm;
 
 
 
-close.addEventListener("click", function(){
+close[0].addEventListener("click", function(){
   inputsec.style.display="none";
   console.log("closed");
 });
@@ -42,6 +46,37 @@ addstory.addEventListener("click", function(){
   inputsec.style.display="block";
   console.log("opened");
 });
+
+close[1].addEventListener("click", function(){
+  inputsec1.style.display="none";
+  console.log("closed");
+});
+
+
+for( var i = 0; i < storylist.length; ++i)
+{
+
+    (function(){
+      var ii = i;
+      setTimeout(function(){
+      storylist[ii].addEventListener("click", function(){
+      processStory(ii); 
+    });
+    },1000);
+  })();
+    
+}
+
+
+function processStory(i)
+{
+
+  inputsec1.style.display="block";
+  storydisplay.innerHTML = "Name: <em>" + names[i] +"</em><br><br>  Destination: <em>" + destinations[i] + "</em><br><br> Story: <br><em>" + stories[i] +"</em>";
+}
+
+
+
 
 /****************************Math Functions *****************************/
 // Cross product calculates vector perpendicular to 2 give  n vectors
@@ -514,7 +549,7 @@ return quat2euler(t);
       });
     }
 
-
+    
     /***********Forms**************************/
     
     
@@ -528,14 +563,42 @@ return quat2euler(t);
       var name = document.formToAdd.name.value;
       var story = document.formToAdd.story.value;
       var des = document.formToAdd.des.value;
+      
 
 
 
       stories.push(story);
-
       names.push(name);
+      destinations.push(des);
+      alert("Submitted!");
+
+
+      document.formToAdd.name.value = '';
+      document.formToAdd.story.value = '';
+      document.formToAdd.des.value = '';
+
+      var curr = storylist.length;
+      var newStory = document.createElement("div"); 
+      newStory.className = "stories";
+      newStory.id="story" + curr;
+      newStory.innerHTML = "Story " + curr; 
       
 
+      var currDiva = document.getElementsByClassName("stories");
+      var currDiv = currDiva[curr-1];
+
+      
+      console.log(newStory.id);
+      console.log(newStory.className);
+      console.log(newStory.innerHTML);
+
+      document.body.insertBefore(newStory, currDiv); 
+
+      
+      //document.formToAdd.reset();
+      
       return false;
+
+
     }
 

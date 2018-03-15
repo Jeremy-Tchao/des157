@@ -37,14 +37,44 @@ font-family: sans-serif;
     color: rgb(142, 142, 142);
 }
 
+#ford
+{
+    font-size: 20px;
+    line-height: 30px;
+}
+
+#instructions
+{
+    
+    color: #0198D9;
+}
+
+#storysec
+{
+    font-size: 10px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
 #addMyStory
 {
     color: #0198D9;
-    width: 108px;
+    /* width: 108px; */
     border-radius: 4px;
     border: #0198D9 2px solid;
     padding: 4px;
+    display: inline-block;
 
+}
+
+.stories
+{
+    color: #0198D9;
+    /* width: 108px; */
+    border-radius: 4px;
+    border: #0198D9 2px solid;
+    padding: 4px;
+    display: inline-block;
 }
 
 
@@ -119,7 +149,7 @@ padding: 4px;
 .map
 {
     width: 100%;
-    height: 650px;
+    height: 600px;
 }
 
 .rect-g-map{
@@ -196,13 +226,24 @@ footer a
     
 }
 
-#close 
+#inputSec1
 {
     position: absolute;
-    top: 50px;
+    width: 100%;
+    height: 100%;
+    color: #0198D9;
+    background: rgba(255, 255, 255, 0.8);
+    
+}
+
+.close 
+{
+    position: absolute;
+    top: 70px;
     right: 40px;
     color: #0198D9;
     font-size: 50px;
+    cursor: pointer;
 }
 
 #ttitle
@@ -212,7 +253,7 @@ footer a
     font-weight: 200;
     width: 340px;
     margin: auto;
-    margin-top: 15%;
+    margin-top: 13%;
     margin-bottom: 20px;
 }
 
@@ -220,8 +261,21 @@ footer a
 {
     margin: auto;
     width: 30%;
-
 }
+
+#displaySec
+{
+    margin: auto;
+    width: 50%;
+    margin-top: 30%;
+}
+
+em
+{   
+    font-style: normal;
+    color: rgb(142, 142, 142);
+}
+
 
 label, input, textarea
 {
@@ -272,6 +326,7 @@ input[type="reset"]
   text-transform: uppercase;
   margin-right: 2%;
   padding: 10px;
+  cursor: pointer;
 
 }
 

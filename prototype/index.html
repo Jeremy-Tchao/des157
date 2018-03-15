@@ -15,11 +15,16 @@
     <div id="text-buttons">
       <h1>From Hong Kong to the World</h1>
       <p>
-        "When our movement was limited, so were our options": This visulization is a celebration of modern aviation and how that enables people to move around easily in the world, the exchanges and fusions of ideas. 
+        <span id="ford">"When our movement was limited, so were our options"</span>
+        <br>This visulization is a celebration of modern aviation, and how it enables people to interconnect, ideas to exchange and fuse.
+        <br><span id="instructions">Click on stories below to see them. Drag, zoom and hover mouse on map and points to explore destinations.</span>
       </p>
 
-      <div id="addMyStory">
-        Add Your Story
+      <div id="storysec">
+        <div id="addMyStory">+Add Your Story</div>
+        <div class="stories" id="story1">Story 1</div>
+        <div class="stories" id="story2">Story 2</div>
+        
       </div>
 
     </div>
@@ -28,7 +33,7 @@
 
     <div id="inputSec" class="hide">
 
-      <div id="close">&otimes;</div>
+      <div class="close">&otimes;</div>
 
       <p id="ttitle">Add Your Story</p>
 
@@ -40,10 +45,10 @@
           <input type="text" id="name" required><br><br>
 
           <label for="des">Your Destination: </label><br>
-          <input type="text" id="des" required><br><br>
+          <input type="text" id="des" placeholder="In airport code, Ex. SFO" required><br><br>
       
           <label for="story">Your Story: </label><br>
-          <textarea id="story" maxlength="300" required>Max 300 Character</textarea><br>
+          <textarea id="story" maxlength="300" placeholder="Max 300 Characters" required></textarea><br>
         </div>
         <div id="buttons">
                 <input type="submit" name="submit" value="Submit">
@@ -51,6 +56,17 @@
         </div>
 
       </form>
+    </div>
+
+    <div id="inputSec1" class="hide">
+        <div class="close">&otimes;</div>
+        
+        <div id="displaySec">
+
+
+        </div>
+
+
     </div>
     
     <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
