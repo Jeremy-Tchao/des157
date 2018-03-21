@@ -17,9 +17,15 @@ document.formToAdd.onsubmit = processForm;
   var storylist = document.getElementsByClassName("stories");
   var storydisplay = document.getElementById("displaySec");
   
+  let airportsNameCoord = {};
+
+  
+  
   var names = ["Zhaohui Zhao", "Tony Xue"];
   var stories = ["Lorem ipsum dolor sit amet, magna ut. Ut vitae vestibulum varius volutpat, auctor fermentum diam pede tempus ipsum dolor, ut morbi lorem ante. Fusce porta velit, amet imperdiet. Amet nec. Suspendisse illo rhoncus. Faucibus suspendisse quam. Eu diam luctus sem gravida, mauris per in tempor et. Quis l","Lorem ipsum dolor sit amet, magna ut. Ut vitae vestibulum varius volutpat, auctor fermentum diam pede tempus ipsum dolor, ut morbi lorem ante. Fusce porta velit, amet imperdiet. Amet nec. Suspendisse illo rhoncus. Faucibus suspendisse quam. Eu diam luctus sem gravida, mauris per in tempor et. Quis l"];
-  var destinations = ["SFO", "SMF"];
+  var destinations = ["SFO", "LHR"];
+
+  
 
   let margin = { top: 0, left: 0, right: 0, down: 0},
     height = 690 - margin.top - margin.down,
@@ -52,27 +58,37 @@ close[1].addEventListener("click", function(){
   console.log("closed");
 });
 
+let time;
 
-for( var i = 0; i < storylist.length; ++i)
-{
+time = setInterval(function(){
+  for( var i = 0; i < storylist.length; ++i)
+  {
+  
+      (function(){
+        var ii = i;
+        setTimeout(function(){
+        storylist[ii].addEventListener("click", function(){
+        processStory(ii); 
+      });
+      checkRoutes(ii);
+      },0);
+    })();
+      
+  }},1000)
 
-    (function(){
-      var ii = i;
-      setTimeout(function(){
-      storylist[ii].addEventListener("click", function(){
-      processStory(ii); 
-    });
-    },1000);
-  })();
-    
-}
+
+
+
 
 
 function processStory(i)
 {
 
   inputsec1.style.display="block";
-  storydisplay.innerHTML = "Name: <em>" + names[i] +"</em><br><br>  Destination: <em>" + destinations[i] + "</em><br><br> Story: <br><em>" + stories[i] +"</em>";
+  var inDestination = destinations[i];
+  storydisplay.innerHTML = "Name: <em>" + names[i] +"</em><br><br>  Destination: <em>" + inDestination + "</em><br><br> Story: <br><em>" + stories[i] +"</em>";
+  
+  
 }
 
 
@@ -219,13 +235,10 @@ return quat2euler(t);
   let play = true;
 
   function dragstart(){
-  	vInit = projection.invert(d3.mouse(this));
-  	svg.insert("path")
-       .datum({type: "Point", coordinates: vInit})
-       .attr("class", "point")
-       .attr("d", path);
-
-   gMap.selectAll(".plane").remove()
+    vInit = projection.invert(d3.mouse(this));
+    console.log("vInit" + vInit + "\n");
+    
+       gMap.selectAll(".plane").remove()
     if (play) {
       clearInterval(time)
     }
@@ -233,11 +246,16 @@ return quat2euler(t);
   }
 
   function dragged(){
-  	var vFin = projection.invert(d3.mouse(this));
-  	o0 = projection.rotate();
+    var vFin = projection.invert(d3.mouse(this));
+    console.log("vFin" + vFin + "\n");
+    o0 = projection.rotate();
+    console.log("o0" + o0 + "\n");
+    
+    
 
   	var o1 = eulerAngles(vInit, vFin, o0);
-  	projection.rotate(o1);
+    projection.rotate(o1);
+    
 
   	svg.selectAll(".point")
   	 		.datum({type: "Point", coordinates: vFin});
@@ -246,18 +264,31 @@ return quat2euler(t);
   }
 
   function dragend(){
-  	svg.selectAll(".point").remove();
-    if (play) {
-      time = setInterval(
-        interval, intSpeed)
-    }
+    
+    time = setInterval(function(){
+  for( var i = 0; i < storylist.length; ++i)
+  {
+  
+      (function(){
+        var ii = i;
+        setTimeout(function(){
+        storylist[ii].addEventListener("click", function(){
+        processStory(ii); 
+      });
+      checkRoutes(ii);
+      },0);
+    })();
+      
+  }},1000)
+    
+    
   }
 //
 
 
   let svg = d3.select("#map")
               .append("svg")
-              .attr("height", 768 + margin.top + margin.down)
+              .attr("height", height + margin.top + margin.down)
               .attr("width", width + margin.left + margin.right)
               .call(drag)
               .call(zoom)
@@ -319,57 +350,84 @@ return quat2euler(t);
 
     let intSpeed = 10;
 
-    let time;
+    
 
     let timer = 0;
     let timeToFlight = {};
     let airport = 0;
 
-    const interval = function(){
-      // debugger
-      //
-      
-      
+  const interval = function()
+  {
 
-        if (timeToFlight[timer]) {
-          // console.log(timer);
-          // console.log(timeToFlight);
+      if (timeToFlight[timer]) {
+        // console.log(timer);
+        // console.log(timeToFlight);
+        
+        timeArr = timeToFlight[timer];
+        
+        // console.log(flight);
+        for (var i = 0; i < timeArr.length; i++) {
           
-          timeArr = timeToFlight[timer];
-          console.log(timeArr);
-          // console.log(flight);
-          for (var i = 0; i < timeArr.length; i++) {
-            
-            timeArr[i];
-            // console.log(timeArr[i]);
-            flight = flightDatas[timeArr[i]]
-            
-            transition(
-              gMap.datum(flight)
-                  .append("path")
-                  .attr("class", "plane")
-                  .attr("d", path)
-              ,
-              gMap.datum({type: "LineString", coordinates: [flight.coordinates, flight.DESTCOORD]})
-                  .append("path")
-                  .attr("class", "route")
-                  .attr("d", path)
-                  .attr('opacity', 0.6)
-                  .attr('fill', "none")
-                  .transition()
-                  .duration(intSpeed*gMap.select(".route").node().getTotalLength())
-                  );
-        }
+          timeArr[i];
+          // console.log(timeArr[i]);
+          flight = flightDatas[timeArr[i]]
 
+          
+          
+          transition(
+            gMap.datum(flight)
+                .append("path")
+                .attr("class", "plane")
+                .attr("d", path)
+            ,
+            gMap.datum({type: "LineString", coordinates: [flight.coordinates, flight.DESTCOORD]})
+                .append("path")
+                .attr("class", "route")
+                .attr("d", path)
+                .attr('opacity', 0.6)
+                .attr('fill', "none")
+                .transition()
+                .duration(intSpeed*gMap.select(".route").node().getTotalLength())
+                );
       }
-      timer += 10
-      if (timer%100 >= 60) {
-        timer += 100 - timer%100
-      }
-      if (timer >= 2400) {
-        timer = 0;
-      }
+
     }
+  
+  }
+
+
+  
+  const checkRoutes = function(j)
+  {  
+
+ 
+        
+        
+        var hkgC = airportsNameCoord["HKG"]["coord"];
+        
+        var storyCoord = airportsNameCoord[destinations[j]]["coord"];
+        transition(
+            gMap.datum(flight)
+                .append("path")
+                .attr("class", "plane")
+                .attr("d", path)
+            ,
+          gMap.datum({type: "LineString", coordinates: [hkgC, storyCoord]})
+              .append("path")
+              .attr("class", "routeS")
+              .attr("d", path)
+              .attr('opacity', 1)
+              .attr('fill', "none")
+              .transition()
+              .duration(intSpeed*gMap.select(".route").node().getTotalLength())
+        );
+        
+        
+    
+  }
+
+
+
 
     let flightDatas;
 
@@ -455,11 +513,13 @@ return quat2euler(t);
 
 
       //Importing Airport coordinates 
-      let airportsNameCoord = {};
+      
       for (var i = 0; i < airports.length; i++) {
         let iata = airports[i].properties.iata_code;
         let coord = airports[i].geometry.coordinates
         airportsNameCoord[iata] = {coord: coord}
+        
+        
       }
 
       
@@ -491,8 +551,8 @@ return quat2euler(t);
 
 
 
-      time = setInterval(
-        interval, intSpeed)
+       setTimeout(interval, 0);
+      
         
 
       gMap.selectAll(".airport")
@@ -547,6 +607,8 @@ return quat2euler(t);
         .attr("d", path.pointRadius(2));
 
       });
+
+      
     }
 
     
@@ -558,7 +620,7 @@ return quat2euler(t);
     {
       
 
-      console.log("Ran");
+      
 
       var name = document.formToAdd.name.value;
       var story = document.formToAdd.story.value;
@@ -577,28 +639,17 @@ return quat2euler(t);
       document.formToAdd.story.value = '';
       document.formToAdd.des.value = '';
 
-      var curr = storylist.length;
-      var newStory = document.createElement("div"); 
-      newStory.className = "stories";
-      newStory.id="story" + curr;
-      newStory.innerHTML = "Story " + curr; 
       
-
-      var currDiva = document.getElementsByClassName("stories");
-      var currDiv = currDiva[curr-1];
-
-      
-      console.log(newStory.id);
-      console.log(newStory.className);
-      console.log(newStory.innerHTML);
-
-      document.body.insertBefore(newStory, currDiv); 
-
-      
-      //document.formToAdd.reset();
-      
+      var node = document.createElement("div");
+      node.className = "stories";
+      var textnode = document.createTextNode("Story " + (storylist.length+1));
+      node.appendChild(textnode);
+      document.getElementById("storysec").appendChild(node);    
       return false;
 
 
     }
+
+
+
 
